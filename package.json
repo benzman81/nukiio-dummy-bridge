@@ -1,0 +1,19 @@
+{
+  "name": "nukiio-dummy-bridge",
+  "version": "1.0.0",
+  "description": "Simulates the API of the Nuki.io Bridge",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benzman81/nukiio-dummy-bridge.git"
+  },
+  "author": "benzman81",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/benzman81/nukiio-dummy-bridge/issues"
+  },
+  "homepage": "https://github.com/benzman81/nukiio-dummy-bridge#readme"
+}

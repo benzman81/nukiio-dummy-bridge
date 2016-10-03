@@ -2,6 +2,7 @@ var http = require('http');
 var url = require('url');
 var querystring = require('querystring');
 var fs = require("fs");
+var path = require('path');
 
 http.createServer(function(request, response) {
     var headers = request.headers;
@@ -58,12 +59,12 @@ http.createServer(function(request, response) {
             }
             else {
                 var nukiId = theUrlParams.nukiId;
-                var state = fs.readFileSync(nukiId + ".state", "UTF-8");
+                var state = fs.readFileSync(path.join(__dirname, nukiId + ".state"), "UTF-8");
                 console.log(theUrlPathname + "---" + nukiId + "---" + state);
                 responseBody = {
                     state: parseInt(state),
                     stateName: "Status: " + state,
-                    batteryCritical: false,
+                    batteryCritical: theUrlParams.batteryCritical ? true : false,
                     success: "true"
                 };
 
@@ -89,9 +90,9 @@ http.createServer(function(request, response) {
                 }
                 console.log(theUrlPathname + "---" + nukiId + "---" + action + "---" + newState);
 
-                var state = fs.writeFileSync(nukiId + ".state", newState, "UTF-8");
+                var state = fs.writeFileSync(path.join(__dirname, nukiId + ".state"), newState, "UTF-8");
                 responseBody = {
-                    batteryCritical: false,
+                    batteryCritical: theUrlParams.batteryCritical ? true : false,
                     success: "true"
                 };
 

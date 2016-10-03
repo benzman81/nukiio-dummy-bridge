@@ -61,7 +61,7 @@ http.createServer(function(request, response) {
                 var state = fs.readFileSync(nukiId + ".state", "UTF-8");
                 console.log(theUrlPathname + "---" + nukiId + "---" + state);
                 responseBody = {
-                    state: state,
+                    state: parseInt(state),
                     stateName: "Status: " + state,
                     batteryCritical: false,
                     success: "true"

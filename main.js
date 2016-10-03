@@ -85,7 +85,7 @@ http.createServer(function(request, response) {
                     newState = 1;
                 }
                 else if(action === "1") {
-                    newState = 2;
+                    newState = 3;
                 }
                 console.log(theUrlPathname + "---" + nukiId + "---" + action + "---" + newState);
 

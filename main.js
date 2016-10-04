@@ -65,7 +65,7 @@ http.createServer(function(request, response) {
                     state: parseInt(state),
                     stateName: "Status: " + state,
                     batteryCritical: theUrlParams.batteryCritical ? true : false,
-                    success: "true"
+                    success: true
                 };
 
                 response.write(JSON.stringify(responseBody));
